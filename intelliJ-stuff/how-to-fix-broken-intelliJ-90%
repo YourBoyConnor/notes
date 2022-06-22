@@ -1,0 +1,6 @@
+In the event of broken symbols or Maven/intelliJ conflicts, try this:
+
+1. Go the parent pom.xml, Right click → Maven → Reload project
+2. Pull File → Reload All From Disk
+3. Pull File → Invalidate Caches...
+    3a. Check "Clear file system cache and Local History"

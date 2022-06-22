@@ -1,1 +1,3 @@
-This is my notes file about angular.
+This file represents my first commit (of hopefully many) to my notes directory on github.
+
+I hope to fill this repository with a ton of knowledge and get an epic job!
