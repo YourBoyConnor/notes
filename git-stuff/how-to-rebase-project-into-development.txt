@@ -3,5 +3,6 @@
 3. Pull Git → Rebase → development
 4. unix>git checkout -f development (to recreate the development branch from GitLab)
 5. unix>git checkout -f <desired branch name> (To switch back to your branch)
-6. unix>mvn clean package -Pprod (Since you are not building the RDA, no -PbuildRda)
-7. unix>git push -f to (force push changes)
+6. Run sync application w/ flyway clean
+7. unix>mvn clean package -Pprod (Since you are not building the RDA, no -PbuildRda)
+8. unix>git push -f to (force push changes)
