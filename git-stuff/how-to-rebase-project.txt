@@ -1,0 +1,7 @@
+1. unix> git branch -D development (To delete the development branch)
+2. unix> git fetch -a (To get the latest development branch)
+3. unix> git checkout -f development (to switch to the recreated development branch from GitLab)
+5. unix> git checkout -f <desired branch name> (To switch back to your branch)
+4. Pull Git → Rebase → development
+6. unix> mvn clean package -Pprod (Since you are not building the RDA, no -PbuildRda)
+7. unix> git push -f (to force push changes)
