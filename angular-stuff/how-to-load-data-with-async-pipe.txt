@@ -1,0 +1,72 @@
+How to load data in parallel with async pipes:
+
+    1. Create a DTO
+
+    2. Create a service (that simulates a REST call)
+
+        public getData(): Observable<DTO> {
+            let dto: DTO = new DTO();
+            dto.info = "blah blha";
+
+            return of(dto);
+        }
+
+    3. Add a public Observable<DTO> in your component
+            public obs: Observable<DTO>
+
+    4. Initialize the observable in your ngOnInit
+            this.obs = this.myService.getObs();
+
+    5. From the HTML
+            <ng-container  *ngIf="(this.obs | async) as stuff">
+
+            </ng-container>
+
+    Creating multiple of these run it PARALLEL!
+
+How to load data in series:
+
+    Approach 1:  Manually subscribe
+
+        public ngOnInit(): void {
+                this.myService.getInfo1().subscribe( (data: DTO1) => {
+                    // REST Call 1 came back successfully
+
+
+                    this.myService.getInfo2().subscribe( data2: DTO2) => {
+                        // REST Call 2 came back successfully
+
+
+                    });
+
+                });
+
+        }
+
+    Approach 2:  Use async pipes and have one INSIDE the other
+
+            public ngOnInit(): void {
+                        this.obs1 = this.myService.getInfo1();
+                        this.obs2 = this.myService.getInfo1();
+                        this.obs3 = this.myService.getInfo1();
+                }
+
+
+            public reloadPage(): void {
+                    this.obs2 = this.myService.getInfo2();
+            }
+
+            <ng-container  *ngIf="(this.obs1 | async) as stuff1">
+                <!-- If I get this far, then REST Call #1 came back successfully
+
+
+                <ng-container  *ngIf="(this.obs2 | async) as stuff2">
+                    <!-- If I get this far, then REST call #2 came back successfully
+
+                </ng-container>
+
+            </ng-container>
+
+            <button (click)="this.reloadPage()">
+                Refresh
+            </button>
