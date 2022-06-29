@@ -1,0 +1,3 @@
+Alt-Enter: Auto-Import
+Ctrl-Enter: Enter class
+Ctrl-B: Go to where thing is defined

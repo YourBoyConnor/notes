@@ -32,10 +32,8 @@ How to load data in series:
                 this.myService.getInfo1().subscribe( (data: DTO1) => {
                     // REST Call 1 came back successfully
 
-
                     this.myService.getInfo2().subscribe( data2: DTO2) => {
                         // REST Call 2 came back successfully
-
 
                     });
 
