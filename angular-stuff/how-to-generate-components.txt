@@ -1,0 +1,12 @@
+unix> ng generate component <component-name>
+
+OR
+
+unix> ng g c <component-name>
+
+This will create:
+    1. A folder named after the component
+    2. A component file, <component-name>.component.ts
+    3. A template file, <component-name>.component.html
+    4. A CSS file, <component-name>.component.css
+    5. A testing specification file, <component-name>.component.spec.ts
