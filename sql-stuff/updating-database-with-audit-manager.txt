@@ -1,0 +1,11 @@
+ String sql = "update <table> set <row> = :<parameter> where <conditions>;
+
+AuditManager auditManager = new AuditManager(dataSource, userService.getLoggedInUserName());
+
+// Create a parameter map
+Map<String, Object> paramMap = new HashMap<>();
+paramMap.put(<parameter>, <value>);
+//...Additional parameters as needed
+
+// Execute the SQL to update this record AND add an audit record              (throws an exception if one record is NOT updated)
+auditManager.runSqlUpdateOne(sql, paramMap, <table_aud>);
