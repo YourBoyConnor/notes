@@ -1,0 +1,3 @@
+Open Database tab on the right
+Click on a table and select "Jump to Query Console..." in the top of the menu
+Test SQL in here so you are 100 percent sure there are no typos or anything
